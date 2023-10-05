@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Executable>F:\1 сем\САОД\treenode\x64\Debug\Tree_test.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="TestCaseName.TestName" Duration="1" />
+    <TestDuration Test="TreeTraversalTest.NLRTraversalTest" Duration="1" />
+    <TestDuration Test="TreeTraversalTest.LNRTraversalTest" Duration="1" />
+    <TestDuration Test="TreeTraversalTest.LRNTraversalTest" Duration="1" />
+    <TestDuration Test="TraversalTest.NLRTraversalTest" Duration="1" />
+    <TestDuration Test="TraversalTest.LNRTraversalTest" Duration="1" />
+    <TestDuration Test="TraversalTest.LRNTraversalTest" Duration="1" />
+    <TestDuration Test="TreeTest.CountNodesTest" Duration="1" />
+    <TestDuration Test="TreeTraversalTest.GetTreeDepthTest" Duration="1" />
+    <TestDuration Test="TreeTest.GetTreeDepthTest" Duration="1" />
+    <TestDuration Test="TreeTest.DeleteTreeTest" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>
