@@ -2,10 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>F:\1 сем\САОД\treenode\x64\Debug\treenode.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>F:\1 сем\САОД\treenode\x64\Debug\Tree_test.exe</FullPath>
+      <FullPath>F:\1 сем\САОД\treenode\x64\Debug\Tree_Test.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

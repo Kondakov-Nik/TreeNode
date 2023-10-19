@@ -25,7 +25,7 @@ public:
         data(item), left(lptr), right(rptr) {}
 };
 
-// Функция для создания дерева
+// Функция для создания дерева 1
 // Функция возвращает указатель на TreeNode<T> и не принимает аргументов
 template <class T>
 TreeNode<T>* CreateTree()
@@ -35,6 +35,36 @@ TreeNode<T>* CreateTree()
     root->right = new TreeNode<T>(3);
     root->left->left = new TreeNode<T>(4);
     root->left->right = new TreeNode<T>(5);
+    return root;
+}
+
+// Функция для создания дерева 2
+// Функция возвращает указатель на TreeNode<T> и не принимает аргументов
+template <class T>
+TreeNode<T>* CreateTree2()
+{
+    TreeNode<T>* root = new TreeNode<T>(1);
+    root->left = new TreeNode<T>(2);
+    root->left->left = new TreeNode<T>(4);
+    root->left->left->left = new TreeNode<T>(5);
+    return root;
+}
+
+// Функция для создания дерева 3
+// Функция возвращает указатель на TreeNode<T> и не принимает аргументов
+template <class T>
+TreeNode<T>* CreateTree3()
+{
+    TreeNode<T>* root = new TreeNode<T>(1);
+    return root;
+}
+
+// Функция для создания дерева 4
+// Функция возвращает указатель на TreeNode<T> и не принимает аргументов
+template <class T>
+TreeNode<T>* CreateTree4()
+{
+    TreeNode<T>* root = new TreeNode<T>(NULL);
     return root;
 }
 
@@ -109,12 +139,14 @@ int CountNodes(TreeNode<T>* root)
     return 1 + CountNodes(root->left) + CountNodes(root->right);
 }
 
+
+
 // Функция для определения глубины дерева
 template <class T>
 int GetTreeDepth(TreeNode<T>* root)
 {
     if (root == nullptr)
-        return 0;
+        return -1;
     int leftDepth = GetTreeDepth(root->left);
     int rightDepth = GetTreeDepth(root->right);
     return 1 + max(leftDepth, rightDepth);
@@ -141,16 +173,10 @@ TreeNode<T>* AddNode(TreeNode<T>* root, const T& item)
 
 {
     // Если ветки не существует
-
     if (root == nullptr)
-
     { // Создадим ее и зададим в нее данные
-
         return new TreeNode<int>(item, nullptr, nullptr);
-
     }
-
-
     if (item < root->data) {
         // Рекурсивно вставляем значение в левое поддерево
         root->left = AddNode(root->left, item);
@@ -159,9 +185,7 @@ TreeNode<T>* AddNode(TreeNode<T>* root, const T& item)
         // Рекурсивно вставляем значение в правое поддерево
         root->right = AddNode(root->right, item);
     }
-
     // Если значение уже присутствует в дереве, ничего не делаем
-
     return root;
 }
 
@@ -185,7 +209,7 @@ TreeNode<T>* CopyTree(const TreeNode<T>* root)
 
 // Функция для обхода дерева в ширину с использованием очереди
 template <class T>
-void BreadthFirstTraversal(const TreeNode<T>* root) {
+void BreadthTraversal(const TreeNode<T>* root) {
     if (root == nullptr) {
         return; // Если корень пустой, завершаем функцию
     }
@@ -208,4 +232,90 @@ void BreadthFirstTraversal(const TreeNode<T>* root) {
             queue.push(current->right);
         }
     }
+}
+ 
+// Приминение функции к каждому узлу дерева
+template <class T>
+void applyFunction(TreeNode<T>* root, void (*operation)(TreeNode<T>*))
+{
+    if (root != nullptr)
+    {
+        // Применяем операцию к текущему узлу
+        operation(root);
+        // Рекурсивно применяем операцию к левому поддереву
+        applyFunction(root->left, operation);
+        // Рекурсивно применяем операцию к правому поддереву
+        applyFunction(root->right, operation);
+
+    }
+}
+
+// Удаление узла из дерева по значению val
+template <class T>
+void removeNode(TreeNode<T>*& root, const T& val) {
+    // Если корень равен NULL, то дерево пустое
+    if (root == NULL) return;
+    // Если значение текущего узла равно значению val
+    if (root->data == val) {
+        // Если корня не имеет детей
+        if (root->left == NULL && root->right == NULL) {
+            // Удаляем корня и обнуляем указатель на него
+            delete root;
+            root = NULL;
+        }
+        // Если у корня нет левого поддерева
+        else if (root->left == NULL) {
+            // Создаем временный указатель на корень
+            TreeNode<T>* temp = root;
+            // Обновляем указатель корня, чтобы он указывал на правое поддерево
+            root = root->right;
+            // Удаляем временный узел
+            delete temp;
+        }
+        // Если у корня нет правого поддерева
+        else if (root->right == NULL) {
+            // Создаем временный указатель на корень
+            TreeNode<T>* temp = root;
+            // Обновляем указатель на корень, чтобы он указывал на левое поддерево
+            root = root->left;
+            // Удаляем временный узел
+            delete temp;
+        }
+        // Если у корня есть как левое и правое поддерево
+        else {
+            // Создаем временный указатель, который начинается с правого поддерева
+            TreeNode<T>* temp = root->right;
+            // Находим самый левый узел в правом поддереве
+            while (temp->left != NULL) {
+                temp = temp->left; // Заменяем значение корня на это значение 
+            }
+            // Копируем значение найденного узла в текущий узел
+            root->data = temp->data;
+            // Рекурсивно удаляем узел с скопированным значением из правого поддерева
+            removeNode(root->right, temp->data);
+        }
+    }
+    // Если значение val меньше значения корня, рекурсивно ищем в левом поддереве
+    else if (val < root->data) {
+        removeNode(root->left, val);
+    }
+    // Если значение val больше значения корня, рекурсивно ищем в правом поддереве
+    else {
+        removeNode(root->right, val);
+    }
+}
+
+// Функция для проверки, содержит ли дерево данное значение
+template <class T>
+bool containsValue(const TreeNode<T>* root, const T& value) {
+    // Если дерево пустое или корень содержит значение, возвращаем true
+    if (root == nullptr) {
+        return false;
+    }
+    if (root->data == value) {
+        return true;
+    }
+
+    // Рекурсивно проверяем левое и правое поддерево
+    return containsValue(root->left, value) || containsValue(root->right, value);
 }

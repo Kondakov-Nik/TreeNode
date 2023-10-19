@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Executable>F:\1 сем\САОД\treenode\x64\Debug\Tree_test.exe</Executable>
+  <Executable>F:\1 сем\САОД\treenode\x64\Debug\Tree_Test.exe</Executable>
   <TestDurations>
     <TestDuration Test="TestCaseName.TestName" Duration="1" />
     <TestDuration Test="TreeTraversalTest.NLRTraversalTest" Duration="1" />
@@ -13,5 +13,38 @@
     <TestDuration Test="TreeTraversalTest.GetTreeDepthTest" Duration="1" />
     <TestDuration Test="TreeTest.GetTreeDepthTest" Duration="1" />
     <TestDuration Test="TreeTest.DeleteTreeTest" Duration="1" />
+    <TestDuration Test="TreeTest.CopyTreeTest" Duration="1" />
+    <TestDuration Test="TraversalTest.NLRTraversalTest2" Duration="1" />
+    <TestDuration Test="TraversalTest.NLRTraversalTest3" Duration="1" />
+    <TestDuration Test="TraversalTest.NLRTraversalTest4" Duration="1" />
+    <TestDuration Test="TraversalTest.LNRTraversalTest2" Duration="1" />
+    <TestDuration Test="TraversalTest.LNRTraversalTest3" Duration="1" />
+    <TestDuration Test="TraversalTest.LNRTraversalTest4" Duration="1" />
+    <TestDuration Test="NLRTraversal.Test1" Duration="1" />
+    <TestDuration Test="NLRTraversal.Test2" Duration="1" />
+    <TestDuration Test="NLRTraversal.Test3" Duration="1" />
+    <TestDuration Test="NLRTraversal.Test4" Duration="1" />
+    <TestDuration Test="LNRTraversal.Test1" Duration="1" />
+    <TestDuration Test="LNRTraversal.Test2" Duration="1" />
+    <TestDuration Test="LNRTraversal.Test3" Duration="1" />
+    <TestDuration Test="LNRTraversal.Test4" Duration="1" />
+    <TestDuration Test="LRNTraversal.Test1" Duration="1" />
+    <TestDuration Test="LRNTraversal.Test2" Duration="1" />
+    <TestDuration Test="LRNTraversal.Test3" Duration="1" />
+    <TestDuration Test="LRNTraversal.Test4" Duration="1" />
+    <TestDuration Test="GetTreeDepth.Test1" Duration="1" />
+    <TestDuration Test="GetTreeDepth.Test2" Duration="1" />
+    <TestDuration Test="GetTreeDepth.Test3" Duration="1" />
+    <TestDuration Test="GetTreeDepth.Test4" Duration="1" />
+    <TestDuration Test="CountNodes.Test1" Duration="1" />
+    <TestDuration Test="CountNodes.Test2" Duration="1" />
+    <TestDuration Test="CountNodes.Test3" Duration="1" />
+    <TestDuration Test="CountNodes.Test4" Duration="1" />
+    <TestDuration Test="BreadthTraversal.Test1" Duration="1" />
+    <TestDuration Test="AddNode.Test1" Duration="1" />
+    <TestDuration Test="AddNodeTest.Test2" Duration="1" />
+    <TestDuration Test="RemoveNode.Test1" Duration="1" />
+    <TestDuration Test="AddNode.Test2" Duration="1" />
+    <TestDuration Test="RemoveNode.Test2" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

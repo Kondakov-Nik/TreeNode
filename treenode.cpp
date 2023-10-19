@@ -13,13 +13,6 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
 
-    //// Создаем дерево
-    //TreeNode<int>* root = new TreeNode<int>(1); //объект типа TreeNode
-    //root->left = new TreeNode<int>(2);
-    //root->right = new TreeNode<int>(3);
-    //root->left->left = new TreeNode<int>(4);
-    //root->left->right = new TreeNode<int>(5);
-
     // Функция для создания дерева
     TreeNode<int>* root = CreateTree<int>();
 
@@ -27,6 +20,7 @@ int main()
     vector<int> nlrResult;
     vector<int> lnrResult;
     vector<int> lrnResult;
+
 
     // Предварительный обход
     NLRTraversal(root, nlrResult);
@@ -49,11 +43,14 @@ int main()
         cout << value << " ";
     cout << endl;
 
+    //removeNode(root, 3);
+
+
+
     // Вывод содержимого узлов
     cout << "Содержимое дерева: ";
     PrintTree(root);
     cout << endl;
-
 
 
     // Печать дерева
@@ -76,10 +73,12 @@ int main()
 
     // Обход в ширину с очередью
     cout << "Обход в ширину с очередью: ";
-    BreadthFirstTraversal(root);
+    BreadthTraversal(root);
     cout << endl;
 
-
+    // Функция для удаление узла из дерева по значению val
+    removeNode(root, 3 );
+    PrintTree(root);
 
     // Удаление дерева
     DeleteTree(root);
@@ -87,7 +86,12 @@ int main()
 
 
 
-
+    //// Создаем дерево
+//TreeNode<int>* root = new TreeNode<int>(1); //объект типа TreeNode
+//root->left = new TreeNode<int>(2);
+//root->right = new TreeNode<int>(3);
+//root->left->left = new TreeNode<int>(4);
+//root->left->right = new TreeNode<int>(5);
 
 
     //// удаление узлов

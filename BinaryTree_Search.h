@@ -1,3 +1,5 @@
+// @author Kondakov N
+
 #pragma once
 #include <vector>
 #include "tree.h"
@@ -21,10 +23,5 @@ public:
     // Конструктор по умолчанию
     BinaryTreeSearch() : root(nullptr), current(nullptr), size(0) {}
     // Конструктор с параметрами
-    BinaryTreeSearch(const T& item) : root(nullptr), current(nullptr), size(0) {
-        insert(item); // Вставляем элемент при создании дерева
-    }
-
-}
-
-
+    BinaryTreeSearch(const T& item) : root(nullptr), current(nullptr), size(0) {}
+};
