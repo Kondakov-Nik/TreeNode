@@ -12,7 +12,7 @@
     <TestDuration Test="TreeTest.CountNodesTest" Duration="1" />
     <TestDuration Test="TreeTraversalTest.GetTreeDepthTest" Duration="1" />
     <TestDuration Test="TreeTest.GetTreeDepthTest" Duration="1" />
-    <TestDuration Test="TreeTest.DeleteTreeTest" Duration="1" />
+    <TestDuration Test="TreeTest.DeleteTreeTest" Duration="0" />
     <TestDuration Test="TreeTest.CopyTreeTest" Duration="1" />
     <TestDuration Test="TraversalTest.NLRTraversalTest2" Duration="1" />
     <TestDuration Test="TraversalTest.NLRTraversalTest3" Duration="1" />
@@ -46,5 +46,31 @@
     <TestDuration Test="RemoveNode.Test1" Duration="1" />
     <TestDuration Test="AddNode.Test2" Duration="1" />
     <TestDuration Test="RemoveNode.Test2" Duration="1" />
+    <TestDuration Test="searchNode.Test1" Duration="1" />
+    <TestDuration Test="searchNode.Test2" Duration="1" />
+    <TestDuration Test="RemoveNode.Test3" Duration="1" />
+    <TestDuration Test="AddNode.Test3" Duration="1" />
+    <TestDuration Test="FindSuccessorTest.Test1" Duration="1" />
+    <TestDuration Test="FindSuccessorTest.Test2" Duration="1" />
+    <TestDuration Test="FindSuccessorTest.Test3" Duration="1" />
+    <TestDuration Test="CopyTreeTest.Test1" Duration="1" />
+    <TestDuration Test="CopyTreeTest.Test2" Duration="1" />
+    <TestDuration Test="CopyTreeTest.Test3" Duration="1" />
+    <TestDuration Test="FindSuccessor.Test1" Duration="1" />
+    <TestDuration Test="FindSuccessor.Test2" Duration="1" />
+    <TestDuration Test="FindSuccessor.Test3" Duration="1" />
+    <TestDuration Test="RemoveNode.Test4" Duration="1" />
+    <TestDuration Test="TestFind_BinSTree.Test1" Duration="1" />
+    <TestDuration Test="TestFind_BinSTree.Test2" Duration="1" />
+    <TestDuration Test="TestInsert_BinSTree.Test1" Duration="1" />
+    <TestDuration Test="TestInsert_BinSTree.Test2" Duration="1" />
+    <TestDuration Test="TestInsert_BinSTree.Test3" Duration="1" />
+    <TestDuration Test="TestRemove_BinSTree.Test1" Duration="1" />
+    <TestDuration Test="TestRemove_BinSTree.Test2" Duration="1" />
+    <TestDuration Test="TestRemove_BinSTree.Test3" Duration="1" />
+    <TestDuration Test="CopyConstructTest.Test1" Duration="1" />
+    <TestDuration Test="TestCopyConstruct_BinSTree.Test1" Duration="1" />
+    <TestDuration Test="TestCopyConstruct_BinSTree.Test2" Duration="1" />
+    <TestDuration Test="TestCopyConstruct_BinSTree.Test3" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

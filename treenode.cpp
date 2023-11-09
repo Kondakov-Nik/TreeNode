@@ -43,9 +43,6 @@ int main()
         cout << value << " ";
     cout << endl;
 
-    //removeNode(root, 3);
-
-
 
     // Вывод содержимого узлов
     cout << "Содержимое дерева: ";
@@ -76,12 +73,89 @@ int main()
     BreadthTraversal(root);
     cout << endl;
 
-    // Функция для удаление узла из дерева по значению val
-    removeNode(root, 3 );
+    // Поиск следующего наибольшего (successor)
+    findSuccessor(root, 1);
+
+    // Поиск по элементу
+    searchNode(root, 2);
+
+    // Функция для удаление узла из дерева по значению val и вывод
+    cout << "Удаление узла 3 из списка и вывод: ";
+    Remove(root, 3 );
     PrintTree(root);
+    cout << endl;
+
 
     // Удаление дерева
     DeleteTree(root);
+
+
+
+
+
+
+
+
+
+    cout << endl;
+    cout << "BinaryTreeSearch" << endl;
+
+
+    // Создаем объект класса BinaryTreeSearch
+    BinaryTreeSearch<int> bts;
+
+    // Вставка элементов
+    bts.Insert(8);
+    bts.Insert(9);
+    bts.Insert(5);
+    bts.Insert(11);
+    bts.Insert(2);
+    bts.Insert(7);
+
+
+    // Поиск элемента в дереве 1 
+    int level=bts.Find(2);
+    if (level != -1) {
+        cout << "Первый узел на уровне: " << level << endl;
+    }
+    else {
+        cout << "Первый узел не найден" << endl;
+    }
+
+    // Поиск элемента в дереве 2 
+    int level2 = bts.Find(8);
+    if (level2 != -1) {
+        cout << "Второй узел на уровне: " << level2 << endl;
+    }
+    else {
+        cout << "Второй узел не найден" << endl;
+    }
+    
+    // Вывести размер дерева
+    cout << "Размер дерева: " << bts.List_Size() << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
