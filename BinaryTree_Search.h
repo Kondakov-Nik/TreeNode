@@ -59,13 +59,53 @@ public:
     // Деструктор
     ~BinaryTreeSearch() { DeleteTree(root); }
 
+    //////////////// комменты
+  
+    // Стандартные методы 
+    void Clear(TreeNode<T>* node); // Очистка дерева
+    void Insert(const T& item); // Вставка нового элемента
+    int Find(const T& item); // Поиск узла по значению
+    void Delete(const T& item);// Удаление узла по значению
+    int List_Size()const; // Размер дерева
 
-    // Стандартные методы
-    void Clear(TreeNode<T>* node);
-    void Insert(const T& item);
-    int Find(const T& item);
-    void Delete(const T& item);
-    int List_Size()const;
+
+    // Конструктор перемещения
+    BinaryTreeSearch(BinaryTreeSearch&& other)
+    {
+        // Перемещаем указатель на корень
+        this->root = other.root;
+        // Перемещаем указатель на текущий узел
+        this->curr = other.curr;
+        // Перемещаем количество элементов дерева
+        this->size = other.size;
+
+        // Обнуляем указатели исходного объекта
+        other.root = nullptr;
+        other.curr = nullptr;
+        other.size = 0;
+    }
+
+    // Оператор присваивания с перемещением
+    BinaryTreeSearch& operator=(BinaryTreeSearch&& other)
+    { // Избегаем самоприсваивания
+        if (&other != this) {
+            Clear(this->root); // Очищаем текущее дерево
+            // Перемещаем указатель на корень
+            this->root = other.root;
+            // Перемещаем указатель на текущий узел
+            this->curr = other.curr;
+            // Перемещаем количество элементов дерева
+            this->size = other.size;
+
+            // Обнуляем указатели исходного объекта
+            other.root = nullptr;
+            other.curr = nullptr;
+            other.size = 0;
+        }
+        return *this; // Возвращаем текущий объект
+    }
+
+    ////////// консттруктор перемещения и оператор присваивания перемещения ++
 };           
 
 
@@ -106,19 +146,3 @@ void BinaryTreeSearch<T>::Delete(const T& item) {
     root = Remove(root, item);
     size--;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,3 +2,4 @@ C:\Users\User\Desktop\treenode\x64\Debug\treenode.exe
 E:\1 сем\САОД\treenode\x64\Debug\treenode.exe
 F:\1 сем\САОД\treenode\x64\Debug\treenode.exe
 D:\1 сем\САОД\treenode\x64\Debug\treenode.exe
+D:\фр\1 сем\САОД\treenode\x64\Debug\treenode.exe

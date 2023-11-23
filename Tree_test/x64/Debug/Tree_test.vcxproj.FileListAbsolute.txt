@@ -1,3 +1,4 @@
 E:\1 сем\САОД\treenode\Tree_Test\x64\Debug\Tree_Test.vcxproj.CopyComplete
 F:\1 сем\САОД\treenode\Tree_Test\x64\Debug\Tree_Test.vcxproj.CopyComplete
 D:\1 сем\САОД\treenode\Tree_Test\x64\Debug\Tree_Test.vcxproj.CopyComplete
+D:\фр\1 сем\САОД\treenode\Tree_Test\x64\Debug\Tree_Test.vcxproj.CopyComplete

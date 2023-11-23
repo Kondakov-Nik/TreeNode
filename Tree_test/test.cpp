@@ -647,7 +647,7 @@ TEST(CopyTreeTest, Test3)
                                            ////// Тестирование функции TestFind_BinSTree 
 
 
-TEST(TestFind_BinSTree, Test1) {
+TEST(TestFind_BinSTree, Test1) { // ++++
 
     // Создаем объект класса BinaryTreeSearch
     BinaryTreeSearch<int> bts;
@@ -657,6 +657,8 @@ TEST(TestFind_BinSTree, Test1) {
     bts.Insert(9);
     bts.Insert(5);
 
+
+    //
     EXPECT_EQ(bts.Find(8), 0);
     EXPECT_EQ(bts.Find(5), 1);
     EXPECT_EQ(bts.Find(10), -1);
@@ -689,6 +691,9 @@ TEST(TestFind_BinSTree, Test2) {
                                                     ////// Тестирование функции TestInsert_BinSTree 
 
 
+// сделать массивы из векторов и их сравнивать
+
+
 TEST(TestInsert_BinSTree, Test1) {
 
     // Создаем объект класса BinaryTreeSearch
@@ -715,6 +720,7 @@ TEST(TestInsert_BinSTree, Test2) { // Пустое
     BinaryTreeSearch<int> bts;
 
     EXPECT_EQ(bts.List_Size(), 0);
+
 }
 
 TEST(TestInsert_BinSTree, Test3) { 
@@ -728,7 +734,7 @@ TEST(TestInsert_BinSTree, Test3) {
     EXPECT_EQ(bts.List_Size(), 1);
 }
 
-
+// вырожденное ++
 
 
 
@@ -748,7 +754,7 @@ TEST(TestRemove_BinSTree, Test1) {
     bts.Insert(9);
     bts.Insert(5);
 
-    // Удаляем элементы из дерева
+    // Удаляем элемент из дерева
     bts.Delete(5);
 
 
@@ -783,11 +789,28 @@ TEST(TestRemove_BinSTree, Test3) {
     bts.Insert(8);
     bts.Insert(9);
 
-    // Удаляем элементы из дерева
+    // Удаляем элемент из дерева
     bts.Delete(8);
 
 
     EXPECT_EQ(bts.List_Size(), 1);
+}
+
+
+
+TEST(TestRemove_BinSTree, Test4) {
+
+    // Создаем объект класса BinaryTreeSearch
+    BinaryTreeSearch<int> bts;
+
+    // Вставка элементов
+    bts.Insert(8);
+
+    // Удаляем элемент из дерева
+    bts.Delete(8);
+
+
+    EXPECT_EQ(bts.List_Size(), 0);
 }
 
 
