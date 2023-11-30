@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Executable>D:\фр\1 сем\САОД\treenode\x64\Debug\Tree_Test.exe</Executable>
+  <Executable>F:\1 сем\САОД\treenode\x64\Debug\Tree_Test.exe</Executable>
   <TestDurations>
     <TestDuration Test="TestCaseName.TestName" Duration="1" />
     <TestDuration Test="TreeTraversalTest.NLRTraversalTest" Duration="1" />
@@ -73,5 +73,10 @@
     <TestDuration Test="TestCopyConstruct_BinSTree.Test2" Duration="1" />
     <TestDuration Test="TestCopyConstruct_BinSTree.Test3" Duration="1" />
     <TestDuration Test="TestRemove_BinSTree.Test4" Duration="1" />
+    <TestDuration Test="BSTIteratorTest.BeginTest" Duration="1" />
+    <TestDuration Test="BSTIteratorTest.EqualityTest" Duration="1" />
+    <TestDuration Test="BSTIteratorTest.InequalityTest" Duration="1" />
+    <TestDuration Test="BSTIteratorTest.IncrementTest" Duration="24" />
+    <TestDuration Test="BSTIteratorTest.EndTest" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

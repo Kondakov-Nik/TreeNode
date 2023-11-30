@@ -3,6 +3,7 @@
 #pragma once
 #include <vector>
 #include "tree.h"
+#include <stack>
 
 using namespace std;
 #include "tree.h"
@@ -47,7 +48,7 @@ public:
             //  опируем размер
             this->size = other.size;
             // ќчищаем текущее дерево
-            DeleteTree(this->root); 
+            DeleteTree(this->root);
             //  опируем дерево
             this->root = CopyTree(other.root);
             // ”станавливаем указатель на текущий узел в корень
@@ -58,16 +59,6 @@ public:
 
     // ƒеструктор
     ~BinaryTreeSearch() { DeleteTree(root); }
-
-    //////////////// комменты
-  
-    // —тандартные методы 
-    void Clear(TreeNode<T>* node); // ќчистка дерева
-    void Insert(const T& item); // ¬ставка нового элемента
-    int Find(const T& item); // ѕоиск узла по значению
-    void Delete(const T& item);// ”даление узла по значению
-    int List_Size()const; // –азмер дерева
-
 
     //  онструктор перемещени€
     BinaryTreeSearch(BinaryTreeSearch&& other)
@@ -105,8 +96,104 @@ public:
         return *this; // ¬озвращаем текущий объект
     }
 
-    ////////// консттруктор перемещени€ и оператор присваивани€ перемещени€ ++
-};           
+    //////////////// комменты
+
+    ////////// консттруктор перемещени€ и оператор присваивани€ перемещени€ ++++
+
+    // —тандартные методы 
+    void Clear(TreeNode<T>* node); // ќчистка дерева
+    void Insert(const T& item); // ¬ставка нового элемента
+    int Find(const T& item); // ѕоиск узла по значению
+    void Delete(const T& item);// ”даление узла по значению
+    int List_Size()const; // –азмер дерева
+
+
+
+
+
+    // класс итератора бинарного дерева поиска
+    template<class T>
+    class BSTIterator {
+    private:
+        // указатель на текущий узел в итерации
+        TreeNode<T>* current;
+        // стек дл€ отслеживани€ узлов во врем€ итерации
+        stack<TreeNode<T>*> nodeStack;
+    public:
+
+        // конструктор итератора
+        BSTIterator(TreeNode<T>* node) : current(node) {
+            // помещение узлов дерева в стек
+            // пока узел не равен nullptr
+            while (current != nullptr) {
+                // помещаем узлы в стек
+                nodeStack.push(current);
+                // переходим к левому поддереву
+                current = current->left;
+            }
+        }
+
+        // оператор разыменовани€-доступа к данным
+        T& operator*() const {
+            // возвращает данные текущего узла
+            return current->data;
+        }
+
+        // оператор инкремента
+        BSTIterator& operator++() {
+            if (current != nullptr) {
+
+                // если текущий узел имеет правого потомка, идем вправо
+                if (current->right != nullptr) {
+                    current = current->right;
+
+                    // идем влево до последнего левого потомка
+                    while (current->left != nullptr) {
+                        nodeStack.push(current);
+                        current = current->left;
+                    }
+                }
+                // если текущий узел не имеет правого потомка, идем вверх по стеку
+                else if (!nodeStack.empty()) {
+                    current = nodeStack.top();
+                    nodeStack.pop();
+                }
+                // если стек пуст и нет правого потомка, достигнут конец дерева
+                else {
+                    current = nullptr;
+                }
+            }
+
+            return *this;
+        }
+
+
+        // оператор равенства
+        bool operator==(const BSTIterator& other) const {
+            return current == other.current;
+        }
+
+        // оператор неравенства
+        bool operator!=(const BSTIterator<T>& other) const {
+            // возвращаем результат отрицани€ оператора равенства
+            return current != other.current;
+        }  
+    };
+
+        // итератор начала 
+        BSTIterator<T>begin() const {
+            return BSTIterator<T>(root);
+        }
+        // итератор конца 
+        BSTIterator<T>end() const {
+            return BSTIterator<T>(nullptr);
+        }
+};
+
+
+
+
+
 
 
 // ќчистка дерева

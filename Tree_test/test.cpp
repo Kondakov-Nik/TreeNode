@@ -634,16 +634,6 @@ TEST(CopyTreeTest, Test3)
 
 
 
-
-
-
-
-
-
-
-
-
-
                                            ////// Тестирование функции TestFind_BinSTree 
 
 
@@ -690,8 +680,6 @@ TEST(TestFind_BinSTree, Test2) {
 
                                                     ////// Тестирование функции TestInsert_BinSTree 
 
-
-// сделать массивы из векторов и их сравнивать
 
 
 TEST(TestInsert_BinSTree, Test1) {
@@ -877,6 +865,99 @@ TEST(TestCopyConstruct_BinSTree, Test3)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    ///////////// TEST BST ITER
+
+// Тест для оператора begin
+TEST(BSTIteratorTest, BeginTest) {
+    // Создаем бинарное дерево для тестирования
+    BinaryTreeSearch<int> tree;
+    tree.Insert(5);
+    tree.Insert(3);
+    tree.Insert(7);
+
+    // Создаем итератор, указывающий на начало дерева
+    auto it = tree.begin();
+
+    EXPECT_EQ(*it, 3);
+}
+
+
+// Тест для оператора ==
+TEST(BSTIteratorTest, EqualTest) {
+
+    // Создаем бинарное дерево для тестирования
+    BinaryTreeSearch<int> tree;
+    tree.Insert(5);
+    tree.Insert(3);
+    tree.Insert(7);
+
+    // Создаем два итератора, указывающих на одинаковое место в дереве
+    auto it1 = tree.begin();
+    auto it2 = tree.begin();
+
+
+    EXPECT_TRUE(it1 == it2);
+}
+
+// Тест для оператора инкремента
+TEST(BSTIteratorTest, IncrementTest) {
+
+    // Создаем бинарное дерево для тестирования
+    BinaryTreeSearch<int> tree;
+    tree.Insert(5);
+    tree.Insert(3);
+    tree.Insert(7);
+
+    // Создаем итератор, указывающий на начало дерева
+    auto it = tree.begin();
+
+    ++it;
+    EXPECT_EQ(*it, 5);
+
+    ++it;
+    EXPECT_EQ(*it, 7);
+}
+
+// Тест для оператора !=
+TEST(BSTIteratorTest, NotEqualTest) {
+
+    // Создаем бинарное дерево для тестирования
+    BinaryTreeSearch<int> tree;
+    tree.Insert(5);
+    tree.Insert(3);
+    tree.Insert(7);
+
+    // Создаем два итератора, указывающих на разные места в дереве
+    auto it1 = tree.begin();
+    auto it2 = tree.end();
+
+    // Проверяем, что два итератора не равны
+    EXPECT_TRUE(it1 != it2);
+}
 
 
 
